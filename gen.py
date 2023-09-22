@@ -37,4 +37,4 @@ if lan == 'all':
     for language in language_list:
         gen(language)
 elif lan in language_list:
-    gen(sys.argv[1])
+    gen(lan)
