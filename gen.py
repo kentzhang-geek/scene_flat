@@ -25,7 +25,8 @@ def collect_files():
     return files
 
 def gen(language):
-    shutil.rmtree("./generated/%s" % language)
+    if os.path.exists("./generated/%s" % language):
+        shutil.rmtree("./generated/%s" % language)
     files = collect_files()
     for file in files:
         os.system("flatc --%s -o ./generated/%s --gen-object-api --filename-suffix \"\" ./fbs/%s" % (language, language, file))
