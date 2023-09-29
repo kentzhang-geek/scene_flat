@@ -6,15 +6,28 @@ struct TriangleIndexTuple {
     idx2 : int32;
 }
 
-enum NormalMapMode : ubyte {
+enum AttributeMapMode : ubyte {
     eNone = 0,
     eByVertex = 1,
     eByIndex = 2,
 }
 
+table MeshTexCoords {
+    texCoords : [Vec2d];
+    texCoordMapMode : AttributeMapMode;
+}
+
 table MeshPrimitive {
     vertexs : [Vec3d];
     normals : [Vec3d];
+    colors : [Vec4d];
     triangles : [TriangleIndexTuple];
-    normalMapMode : NormalMapMode;
+    normalMapMode : AttributeMapMode;
+    colorMapMode : AttributeMapMode;
+	diffuseTexCoord : MeshTexCoords;
+	ambientTexCoord : MeshTexCoords;
+	specularTexCoord : MeshTexCoords;
+	normalTexCoord : MeshTexCoords;
+	roughMetalTexCoord : MeshTexCoords;
+	otherTexCoord : [MeshTexCoords];
 }

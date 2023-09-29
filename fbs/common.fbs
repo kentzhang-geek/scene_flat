@@ -5,6 +5,11 @@ struct Vec3d {
     z : float64;
 }
 
+struct Vec2d {
+    x : float64;
+    y : float64;
+}
+
 struct BoundingBox {
     p_min : Vec3d;
     p_max : Vec3d;

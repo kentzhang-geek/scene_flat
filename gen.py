@@ -21,7 +21,8 @@ def collect_files():
     files = []
     for root, dirs, filenames in os.walk("./fbs/"):
         for filename in filenames:
-            files.append(filename)
+            if filename.endswith(".fbs"):
+                files.append(filename)
     return files
 
 def gen(language):
