@@ -20,10 +20,8 @@ table MeshTexCoords {
 table MeshPrimitive {
     vertexs : [Vec3d];
     normals : [Vec3d];
-    colors : [Vec4d];
     triangles : [TriangleIndexTuple];
     normalMapMode : AttributeMapMode;
-    colorMapMode : AttributeMapMode;
 	diffuseTexCoord : MeshTexCoords;
 	ambientTexCoord : MeshTexCoords;
 	specularTexCoord : MeshTexCoords;
