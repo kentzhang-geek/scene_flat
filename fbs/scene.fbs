@@ -1,7 +1,9 @@
 include "bvh_accel.fbs";
+include "material.fbs";
 
 table Scene {
     root : BVHNode;
+    materials: [Material];
 }
 
 root_type Scene;

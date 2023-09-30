@@ -30,4 +30,5 @@ table MeshPrimitive {
 	normalTexCoord : MeshTexCoords;
 	roughMetalTexCoord : MeshTexCoords;
 	otherTexCoord : [MeshTexCoords];
+	materialIdx : uint64;
 }

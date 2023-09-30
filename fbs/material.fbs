@@ -1,0 +1,16 @@
+include "common.fbs";
+
+table Phong {
+}
+
+table Lambert {
+}
+
+union Surface {
+	Phong, Lambert
+}
+
+table Material {
+	id : uint64;
+	surface : Surface;
+}
