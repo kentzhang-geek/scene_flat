@@ -1,13 +1,25 @@
 include "common.fbs";
+include "texture.fbs";
 
-table Phong {
+table LambertSurface {
+	diffuse : Vec3d;
+	diffuse_texture : Texture;
+	emissive : Vec3d;
+	emissive_texture : Texture;
+	ambient : Vec3d;
+	ambient_texture : Texture;
+	normal : Vec3d;
+	normal_texture : Texture;
 }
 
-table Lambert {
+table PhongSurface {
+	specular : Vec3d;
+	specular_texture : Texture;
+	base : LambertSurface;
 }
 
 union Surface {
-	Phong, Lambert
+	PhongSurface, LambertSurface
 }
 
 table Material {

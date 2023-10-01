@@ -1,0 +1,8 @@
+include "common.fbs";
+
+table Texture {
+	id : uint64;
+	file_name : string;
+	media_name : string;
+	data : [ubyte];
+}
