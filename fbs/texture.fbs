@@ -1,8 +1,52 @@
 include "common.fbs";
 
+enum ImageType : ubyte {
+    eNone = 0,
+    eFileData = 1,
+    eRawData = 2,
+}
+
+enum PixelType : ubyte {
+	eNone    = 0,
+	eRu8     = 1,
+	eRi8     = 2,
+	eRu16    = 3,
+	eRi16    = 4,
+	eRf16    = 5,
+	eRu32    = 6,
+	eRi32    = 7,
+	eRf32    = 8,
+	eRGu8    = 9,
+	eRGi8    = 10,
+	eRGu16   = 11,
+	eRGi16   = 12,
+	eRGf16   = 13,
+	eRGu32   = 14,
+	eRGi32   = 15,
+	eRGf32   = 16,
+	eRGBu8   = 17,
+	eRGBi8   = 18,
+	eRGBu16  = 19,
+	eRGBi16  = 20,
+	eRGBf16  = 21,
+	eRGBu32  = 22,
+	eRGBi32  = 23,
+	eRGBf32  = 24,
+	eRGBAu8  = 25,
+	eRGBAi8  = 26,
+	eRGBAu16 = 27,
+	eRGBAi16 = 28,
+	eRGBAf16 = 29,
+	eRGBAu32 = 30,
+	eRGBAi32 = 31,
+	eRGBAf32 = 32,
+}
+
 table Texture {
 	id : uint64;
 	file_name : string;
 	media_name : string;
+	pixel_type : PixelType;
+	image_type : ImageType;
 	data : [ubyte];
 }

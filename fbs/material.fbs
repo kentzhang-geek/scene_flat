@@ -4,6 +4,8 @@ include "texture.fbs";
 table LambertSurface {
 	diffuse : Vec3d;
 	diffuse_texture : Texture;
+	albedo : Vec3d;
+	albedo_texture : Texture;
 	emissive : Vec3d;
 	emissive_texture : Texture;
 	ambient : Vec3d;
@@ -18,11 +20,19 @@ table PhongSurface {
 	base : LambertSurface;
 }
 
+table GltfPbrSurface {
+	baseColor : Vec3d;
+	baseColor_texture : Texture;
+	metallic : Vec3d;
+	roughness : Vec3d;
+}
+
 union Surface {
-	PhongSurface, LambertSurface
+	PhongSurface, LambertSurface, GltfPbrSurface
 }
 
 table Material {
 	id : uint64;
+	name : string;
 	surface : Surface;
 }
