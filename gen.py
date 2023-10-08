@@ -30,7 +30,7 @@ def gen(language):
         shutil.rmtree("./generated/%s" % language)
     files = collect_files()
     for file in files:
-        os.system("flatc --object-prefix sf_ --%s -o ./generated/%s --gen-object-api --filename-suffix \"\" ./fbs/%s" % (language, language, file))
+        os.system("flatc --%s -o ./generated/%s --gen-object-api --filename-suffix \"\" ./fbs/%s" % (language, language, file))
 
 language_list = ['cpp', 'c', 'rust']
 
