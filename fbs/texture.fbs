@@ -1,9 +1,9 @@
 include "common.fbs";
 
 enum ImageType : ubyte {
-    eNone = 0,
+    eNone     = 0,
     eFileData = 1,
-    eRawData = 2,
+    eRawData  = 2,
 }
 
 enum PixelType : ubyte {
@@ -43,10 +43,10 @@ enum PixelType : ubyte {
 }
 
 table Texture {
-	id : uint64;
-	file_name : string;
+	id         : uint64;
+	file_name  : string;
 	media_name : string;
 	pixel_type : PixelType;
 	image_type : ImageType;
-	data : [ubyte];
+	data       : [ubyte];
 }
