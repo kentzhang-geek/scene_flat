@@ -1,5 +1,6 @@
 include "common.fbs";
 include "mesh_primitive.fbs";
+namespace sf;
 
 table BVHNode {
     name             : string(required);

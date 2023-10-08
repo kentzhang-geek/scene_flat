@@ -1,5 +1,6 @@
 include "common.fbs";
 include "texture.fbs";
+namespace sf;
 
 table LambertSurface {
 	diffuse          : Vec3d;

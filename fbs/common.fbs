@@ -1,3 +1,4 @@
+namespace sf;
 /// this flatbuffer scheme described all basic data structure that needs serialization
 struct Vec3d {
     x : float64;
