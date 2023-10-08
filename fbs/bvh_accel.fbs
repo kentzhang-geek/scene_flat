@@ -2,10 +2,10 @@ include "common.fbs";
 include "mesh_primitive.fbs";
 
 table BVHNode {
-    name : string(required);
-    children : [BVHNode];
-    meshes : [MeshPrimitive];
-    local_transform : Matrix44d(required);
+    name             : string(required);
+    children         : [BVHNode];
+    meshes           : [MeshPrimitive];
+    local_transform  : Matrix44d(required);
     /// for convenient
     global_transform : Matrix44d;
 }

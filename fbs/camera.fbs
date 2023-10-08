@@ -1,8 +1,8 @@
 include "common.fbs";
 
 table Camera {
-	name : string(required);
-	eye : Vec3d(required);
+	name   : string(required);
+	eye    : Vec3d(required);
 	center : Vec3d(required);
 	upAxis : Vec3d(required);
 }

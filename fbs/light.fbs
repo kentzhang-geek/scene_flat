@@ -1,19 +1,19 @@
 include "common.fbs";
 
 enum LightType : ubyte {
-    eNone = 0,
+    eNone      = 0,
     eDirection = 1,
-    ePoint = 2,
-	eSpot = 3,
-	eArea = 4,
+    ePoint     = 2,
+	eSpot      = 3,
+	eArea      = 4,
 }
 
 table Light {
-	name:string(required);
-	type:LightType;
+	name             : string(required);
+	type             : LightType;
     global_transform : Matrix44d(required);
-	color:Vec3d;
-	intensity:float64;
-	innerAngle:float64;
-	outerAngle:float64;
+	color            : Vec3d;
+	intensity        : float64;
+	innerAngle       : float64;
+	outerAngle       : float64;
 }

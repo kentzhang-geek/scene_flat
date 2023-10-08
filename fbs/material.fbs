@@ -2,29 +2,29 @@ include "common.fbs";
 include "texture.fbs";
 
 table LambertSurface {
-	diffuse : Vec3d;
-	diffuse_texture : Texture;
-	albedo : Vec3d;
-	albedo_texture : Texture;
-	emissive : Vec3d;
+	diffuse          : Vec3d;
+	diffuse_texture  : Texture;
+	albedo           : Vec3d;
+	albedo_texture   : Texture;
+	emissive         : Vec3d;
 	emissive_texture : Texture;
-	ambient : Vec3d;
-	ambient_texture : Texture;
-	normal : Vec3d;
-	normal_texture : Texture;
+	ambient          : Vec3d;
+	ambient_texture  : Texture;
+	normal           : Vec3d;
+	normal_texture   : Texture;
 }
 
 table PhongSurface {
-	specular : Vec3d;
+	specular         : Vec3d;
 	specular_texture : Texture;
-	base : LambertSurface;
+	base             : LambertSurface;
 }
 
 table GltfPbrSurface {
-	baseColor : Vec3d;
+	baseColor         : Vec3d;
 	baseColor_texture : Texture;
-	metallic : Vec3d;
-	roughness : Vec3d;
+	metallic          : Vec3d;
+	roughness         : Vec3d;
 }
 
 union Surface {
@@ -32,7 +32,7 @@ union Surface {
 }
 
 table Material {
-	id : uint64;
-	name : string;
+	id      : uint64;
+	name    : string;
 	surface : Surface;
 }

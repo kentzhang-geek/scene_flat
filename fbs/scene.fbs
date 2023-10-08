@@ -4,10 +4,10 @@ include "camera.fbs";
 include "light.fbs";
 
 table Scene {
-    root : BVHNode;
-    materials: [Material];
-    cameras: [Camera];
-    lights: [Light];
+    root      : BVHNode;
+    materials : [Material];
+    cameras   : [Camera];
+    lights    : [Light];
 }
 
 root_type Scene;

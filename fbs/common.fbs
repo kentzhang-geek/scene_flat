@@ -23,5 +23,5 @@ struct Vec4d {
 }
 
 struct Matrix44d {
-    idx : [Vec4d:4];
+    rows : [Vec4d:4];
 }
