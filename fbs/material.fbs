@@ -13,6 +13,8 @@ table LambertSurface {
 	ambient_texture  : Texture;
 	normal           : Vec3d;
 	normal_texture   : Texture;
+        metallic         : Vec3d;
+        roughness        : Vec3d;
 }
 
 table PhongSurface {
@@ -21,15 +23,8 @@ table PhongSurface {
 	base             : LambertSurface;
 }
 
-table GltfPbrSurface {
-	baseColor         : Vec3d;
-	baseColor_texture : Texture;
-	metallic          : Vec3d;
-	roughness         : Vec3d;
-}
-
 union Surface {
-	PhongSurface, LambertSurface, GltfPbrSurface
+	PhongSurface, LambertSurface
 }
 
 table Material {

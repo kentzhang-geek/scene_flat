@@ -9,4 +9,8 @@ table Texture {
 	pixel_type : PixelType;
 	image_type : ImageType;
 	data       : [ubyte];
+        /// for raw image
+        width      : uint32;
+        height     : uint32;
+        components : uint32;
 }
