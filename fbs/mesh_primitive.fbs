@@ -23,11 +23,11 @@ table MeshPrimitive {
     normals            : [Vec3d];
     triangles          : [TriangleIndexTuple];
     normalMapMode      : AttributeMapMode;
-	diffuseTexCoord    : MeshTexCoords;
-	ambientTexCoord    : MeshTexCoords;
-	specularTexCoord   : MeshTexCoords;
-	normalTexCoord     : MeshTexCoords;
-	roughMetalTexCoord : MeshTexCoords;
-	otherTexCoord      : [MeshTexCoords];
-	materialIdx        : uint64;
+    diffuseTexCoord    : MeshTexCoords;
+    ambientTexCoord    : MeshTexCoords;
+    specularTexCoord   : MeshTexCoords;
+    normalTexCoord     : MeshTexCoords;
+    roughMetalTexCoord : MeshTexCoords;
+    otherTexCoord      : [MeshTexCoords];
+    materialIdx        : uint64;
 }
