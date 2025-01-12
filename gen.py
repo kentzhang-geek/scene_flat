@@ -9,6 +9,9 @@ import shutil
 # special: all -> means generate all languages' code
 # the code will bi in ./generated/<language>/
 
+language_list = ['cpp', 'rust']
+main_files = ['scene.fbs']
+
 if len(sys.argv) < 2:
     print("usage: python gen.py <language>")
     print("example: python gen.py cpp")
@@ -28,11 +31,9 @@ def collect_files():
 def gen(language):
     if os.path.exists("./generated/%s" % language):
         shutil.rmtree("./generated/%s" % language)
-    files = collect_files()
+    files = main_files
     for file in files:
-        os.system("flatc --%s -o ./generated/%s --gen-object-api --filename-suffix \"\" ./fbs/%s" % (language, language, file))
-
-language_list = ['cpp', 'c', 'rust']
+        os.system("flatc --%s -I fbs --gen-all -o ./generated/%s --gen-object-api --filename-suffix \"\" ./fbs/%s" % (language, language, file))
 
 lan = sys.argv[1].replace('-', '')
 if lan == 'all':
